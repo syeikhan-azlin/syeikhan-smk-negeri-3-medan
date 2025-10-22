@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Laptop Khanz Online</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #eb830b;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #0dcce6;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      background-color: #19f7ad;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      background: white;
+      margin: 20px auto;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      color: #0ee0ac;
+    }
+
+    .laptop-list {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .laptop-item {
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      width: 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .laptop-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .btn {
+      background-color: #12e493;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #19e992;
+    }
+
+    .btn-back {
+      background-color: #6b7280;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+
+    .btn-back:hover {
+      background-color: #4b5563;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #16e797;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #09c788;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>💻 E-Commerce Laptop Online</h1>
+    <p>Selamat datang di toko laptop Syeikhan. Pilih laptop favorit Anda dengan harga terbaik Dan Terjangkau!</p>
+  </header>
+
+  <nav>
+    <a href="#" class="active" onclick="showPage('beranda', this)">Beranda</a>
+    <a href="#" onclick="showPage('harga', this)">Harga Laptop</a>
+    <a href="#" onclick="showPage('profil', this)">Profil Penjual</a>
+    <a href="#" onclick="showPage('alamat', this)">Alamat Toko</a>
+  </nav>
+
+  <!-- BERANDA -->
+  <section id="beranda" class="active">
+    <h2>Daftar Laptop Unggulan</h2>
+    <div class="laptop-list">
+      <div class="laptop-item">
+        <img src="https://external-preview.redd.it/dell-xps-16-2024-review-best-windows-laptop-ive-tested-so-v0-9MXdR5nAZ6gFXU5OjM0lsDnDhF72-HUmcSZizJqLDCQ.jpg?auto=webp&s=ab782b3f2815146bc8c9453892c5e1827661e44f" alt="Laptop UltraBook">
+        <h3>Laptop UltraBook</h3>
+        <button class="btn" onclick="showPage('harga', document.querySelector('nav a:nth-child(2)'))">Lihat Harga</button>
+      </div>
+      <div class="laptop-item">
+        <img src="https://static.retailworldvn.com/Products/Images/12217/339577/acer-aspire-7-pro-intel-core-i5-12450h-8gb-512gb-win11-a715-59g-56k7-black-1.jpg" alt="Laptop Acer Aspire 7 PRO">
+        <h3>Laptop Acer Aspire 7 PRO</h3>
+        <button class="btn" onclick="showPage('harga', document.querySelector('nav a:nth-child(2)'))">Lihat Harga</button>
+      </div>
+      <div class="laptop-item">
+        <img src="https://static.retailworldvn.com/Products/Images/12217/342283/laptop-lenovo-loq-15iax9e-i5-12450hx-12gb-512gb-ohs-win11-loq-83lk008uid-1.jpg" alt="Laptop Lenovo LOQ 15IAX9E ">
+        <h3>Laptop Lenovo LOQ 15IAX9E </h3>
+        <button class="btn" onclick="showPage('harga', document.querySelector('nav a:nth-child(2)'))">Lihat Harga</button>
+      </div>
+      <div class="laptop-item">
+        <img src="https://static.retailworldvn.com/Products/Images/12217/313517/macbook-pro-tb-2022-m2-133-sg-8c-cpu-10c-gpu-8gb-512gb-m2-1.jpg" alt="Laptop Macbook Pro TB 2022 M2  ">
+        <h3>Laptop Macbook Pro TB 2022 M2  </h3>
+        <button class="btn" onclick="showPage('harga', document.querySelector('nav a:nth-child(2)'))">Lihat Harga</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HARGA -->
+  <section id="harga">
+    <h2>Daftar Harga Laptop</h2>
+    <table>
+      <tr>
+        <th>Jenis Laptop</th>
+        <th>Spesifikasi Singkat</th>
+        <th>Harga</th>
+      </tr>
+      <tr>
+        <td>laptop ultrabook </td>
+        <td>RAM 8GB, SSD 256GB, Layar 13,6"</td>
+        <td>Rp13.599.000</td>
+      </tr>
+      <tr>
+        <td>Laptop Acer Aspire 7 PRO</td>
+        <td>Intel Core i5-12450H/8GB/512GB/Win11 (A715-59G-56K7) Black</td>
+        <td>Rp 10.699.000</td>
+      </tr>
+      <tr>
+        <td>Laptop Lenovo LOQ 15IAX9E </td>
+        <td>Intel Core i5-12450HX/12GB/512GB/OHS/Win11 (LOQ-83LK008UID) Grey</td>
+        <td>Rp 11.899.000</td>
+      </tr>
+       <tr>
+        <td>Laptop Macbook Pro TB 2022 M2  </td>
+        <td>13.3 SG/8C CPU/10C GPU/8GB/512GB M2</td>
+        <td>Rp 25.999.000</td>
+      </tr>
+    </table>
+    <button class="btn-back" onclick="showPage('beranda', document.querySelector('nav a:first-child'))">🔙 Kembali ke Beranda</button>
+  </section>
+
+  <!-- PROFIL -->
+  <section id="profil">
+    <h2>Profil Penjual</h2>
+    <p><b>Khanz Store</b></p>
+    <p>Didirikan pada tahun 2024, Khanz Store adalah toko yang berpengalaman dalam menjual berbagai laptop berkualitas dengan harga bersaing. Kami berkomitmen memberikan pelayanan terbaik untuk pelanggan kami.</p>
+    <button class="btn-back" onclick="showPage('beranda', document.querySelector('nav a:first-child'))">🔙 Kembali ke Beranda</button>
+  </section>
+
+  <!-- ALAMAT -->
+  <section id="alamat">
+    <h2>Alamat Toko</h2>
+    <p>📍 Jl. Maimun No. 45, Medan</p>
+    <p>📞 0821-8765-4356</p>
+    <p>🕒 Buka: Senin - Sabtu (10.00 - 18.00)</p>
+    <div class="map">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31856.76420797508!2d98.66014085828894!3d3.5654831029020975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30313038b5437363%3A0x8b0b9ff3a9434158!2sKec.%20Medan%20Maimun%2C%20Kota%20Medan%2C%20Sumatera%20Utara!5e0!3m2!1sid!2sid!4v1761117902168!5m2!1sid!2sid>/iframe>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></src=>" allowfullscreen="" loading="lazy"></iframe>
+</div>
+    <button class="btn-back" onclick="showPage('beranda', document.querySelector('nav a:first-child'))">🔙 Kembali ke Beranda</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Khanz Store | E-Commerce Laptop Khanz Online</p>
+  </footer>
+
+  <script>
+    function showPage(pageId, element) {
+      // sembunyikan semua section
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      // tampilkan section yang diklik
+      document.getElementById(pageId).classList.add('active');
+
+      // ubah navbar aktif
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      if (element) element.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
