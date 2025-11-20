@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kalkulator Sederhana</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #0668e7;
+            }
+
+            .calculator {
+                background-color: #f12f0d;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .display {
+                width: 100%;
+                height: 40px;
+                text-align: right;
+                font-size: 24px;
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #0f0cbd;
+                background-color: #ffffff;
+            }
+
+            .buttons {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+
+            .button {
+                padding: 20px;
+                font-size: 20px;
+                background-color: #009fe9;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+            .button:hover {
+                background-color: #e0e0e0;
+            }
+
+            .button:active {
+                background-color: #ddd;
+            }
+
+            .button.operator {
+                background-color: #f8b400;
+                color: white;
+            }
+
+            .button.operator:hover {
+                background-color: #e79f00;
+            }
+
+            .button.equal {
+                background-color: #4caf50;
+                color: white;
+            }
+
+            .button.equal:hover {
+                background-color: #45a049;
+            }
+
+            .button.clear {
+                background-color: #e71d0f;
+                color: white;
+            }
+
+            .button.clear:hover {
+                background-color: #fa0a06;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="calculator">
+            <input type="text" id="display" class="display" disabled />
+            <div class="buttons">
+                <button class="button clear" onclick="clearDisplay()">C</button>
+                <button class="button operator" onclick="appendNumber('/')">/</button>
+                <button class="button operator" onclick="appendNumber('*')">*</button>
+                <button class="button operator" onclick="appendNumber('-')">-</button>
+
+                <button class="button" onclick="appendNumber(7)">7</button>
+                <button class="button" onclick="appendNumber(8)">8</button>
+                <button class="button" onclick="appendNumber(9)">9</button>
+                <button class="button operator" onclick="appendNumber('+')">+</button>
+
+                <button class="button" onclick="appendNumber(4)">4</button>
+                <button class="button" onclick="appendNumber(5)">5</button>
+                <button class="button" onclick="appendNumber(6)">6</button>
+                <button class="button equal" onclick="calculate()">=</button>
+
+                <button class="button" onclick="appendNumber(1)">1</button>
+                <button class="button" onclick="appendNumber(2)">2</button>
+                <button class="button" onclick="appendNumber(3)">3</button>
+                <button class="button" onclick="appendNumber(0)">0</button>
+
+                <button class="button" onclick="appendDot()">.</button>
+            </div>
+        </div>
+
+        <script>
+            let currentInput = '';
+
+            function updateDisplay() {
+                document.getElementById('display').value = currentInput;
+            }
+
+            function appendNumber(number) {
+                currentInput += number;
+                updateDisplay();
+            }
+
+            function appendDot() {
+                if (!currentInput.includes('.')) {
+                    currentInput += '.';
+                    updateDisplay();
+                }
+            }
+
+            function clearDisplay() {
+                currentInput = '';
+                updateDisplay();
+            }
+
+            function calculate() {
+                try {
+                    currentInput = eval(currentInput).toString();
+                    updateDisplay();
+                } catch (error) {
+                    currentInput = 'Error';
+                    updateDisplay();
+                }
+            }
+        </script>
+    </body>
+
+</html>
