@@ -1,0 +1,71 @@
+C:\Users\USER>cd C:\Xampp
+
+C:\xampp>cd C:\xampp\mysql\bin
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and otherse.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> 
+
+
+
+CREATE DATABASE IF NOT EXISTS siswaRPL1;
+
+USE siswaRPL1;
+
+CREATE TABLE jurusan (
+    id_jurusan INT AUTO_INCREMENT PRIMARY KEY,
+    nama_jurusan VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE guru (
+    id_guru INT AUTO_INCREMENT PRIMARY KEY,
+    nama_guru VARCHAR(100) NOT NULL,
+    nip VARCHAR(20) UNIQUE
+);
+
+CREATE TABLE siswa (
+    id_siswa INT AUTO_INCREMENT PRIMARY KEY,
+    nama_siswa VARCHAR(100) NOT NULL,
+    nis VARCHAR(20) UNIQUE NOT NULL,
+    id_jurusan INT,
+    id_guru INT,
+    FOREIGN KEY (id_jurusan) REFERENCES jurusan(id_jurusan),
+    FOREIGN KEY (id_guru) REFERENCES guru(id_guru)
+
+
+
+INSERT INTO jurusan (nama_jurusan) VALUES
+('Rekayasa Perangkat Lunak'),
+('Teknik Komputer dan Jaringan'),
+('Multimedia'),
+('Manajemen Perkantoran'),
+('Akuntansi');
+```
+
+
+INSERT INTO guru (nama_guru, nip) VALUES
+('Bapak Suangli', '198001012005011001'),
+('Ibu Rini Lestari', '198203112006042002'),
+('Bapak Radifa', '197711202001121003'),
+('Ibu Sari Amelia', '198906152010122004'),
+('Bapak Fajrul Napitupuluh', '197901292002031005');
+```
+
+
+INSERT INTO siswa (nama_siswa, nis, id_jurusan, id_guru) VALUES
+('Abdyllah Gunawan', '10101', 1, 1),
+('Siti Nuraini', '10102', 2, 2),
+('Echa Aurelya Sirait', '10103', 1, 3),
+('Siti Nabila', '10104', 3, 4),
+('M Fauzan', '10105', 1, 1),
+('Randu Alamsya', '10106', 4, 2),
+('syeikhan azlin', '10107', 5, 5);
+```
